@@ -1,0 +1,32 @@
+﻿@model ISchoolAppWebAppIvan.Models.MinorModel;
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+
+<div id="hideMe" style="display:none">
+    <h1 class="minors">Available Minors</h1>
+    <div class="minorAccordions">
+        @foreach (var minors in @Model.ugminors) //Iterate through each minor in ugminors and display its info
+        {
+            <div class="minorAcc">
+                <h1 style="font-size:large">
+                    @minors.title
+                </h1>
+                <div style="font-size: medium">
+                    <h2 class="minorName">@minors.name</h2>
+                    @minors.description
+                    <p class="note">Note: @minors.note</P>
+                    <hr>
+                    Courses:
+                    <div class="buttons">
+                        @foreach (var course in minors.courses) //display each course as a button
+                            {
+                                <button class="course-button">@course</button>//button will display zebra dialog plugin 
+                                
+                            }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

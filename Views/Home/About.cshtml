@@ -1,0 +1,13 @@
+﻿@model ISchoolAppWebAppIvan.Models.AboutModel;
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+
+<div id="hideMe" style="display:none">
+    <h1 class="aboutTitle">@ViewData["Title"]</h1>
+    <section class="about">
+        <p>@Model.description</p>
+        <p>@Model.quote</p>
+        <p>- @Model.quoteAuthor</p>
+    </section>
+</div>

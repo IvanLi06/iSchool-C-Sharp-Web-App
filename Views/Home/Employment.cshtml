@@ -1,0 +1,91 @@
+﻿@model ISchoolAppWebAppIvan.Models.EmploymentModel
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+
+<div id="hideMe" style="display:none">
+    <h1 class="employmentTitle">@Model.introduction.title</h1>
+    <hr />
+    <div class="employmentInformation">
+        @foreach (var content in Model.introduction.content)//Display employment intro title and description
+        {
+            <h2>@content.title</h2>
+            <p>@content.description</p>
+        }
+
+    <h2>@Model.degreeStatistics.title</h2>
+        @foreach (var statistic in Model.degreeStatistics.statistics)// display each statistics description and value
+        {
+            <p>
+               @statistic.description: 
+               @statistic.value
+            </p>
+        }
+    </div>
+    <hr />
+
+    <div class="ecTitles">
+        <h1>@Model.employers.title</h1>
+            @foreach (var employer in Model.employers.employerNames)//display each employer name from employers
+            {
+                <li>@employer</li>
+            }
+
+        <h1 class="careerTitle">@Model.careers.title</h1>
+            @foreach (var career in Model.careers.careerNames) //display each career name from careers
+            {
+                <li>@career</li>
+            }
+    </div>
+    <hr />
+
+    <div class="tables">
+        <h2>Co-op Table</h2>
+        <table id="coopTable" class="display" style="width:100%">@*Table to display coop info*@
+            <thead>
+                <tr>
+                    <th>Employer</th>
+                    <th>Degree</th>
+                    <th>City</th>
+                    <th>Term</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var coop in Model.coopTable.coopInformation)//display each section in coopInformation
+                {
+                    <tr>
+                        <td>@coop.employer</td>
+                        <td>@coop.degree</td>
+                        <td>@coop.city</td>
+                        <td>@coop.term</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2>Employment Table</h2>
+        <table id="employmentTable" class="display" style="width:100%">@*Table to display employment info*@
+            <thead>
+                <tr>
+                    <th>Employer</th>
+                    <th>Degree</th>
+                    <th>City</th>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employment in Model.employmentTable.professionalEmploymentInformation)//display each section in employmentInformation
+                {
+                    <tr>
+                        <td>@employment.employer</td>
+                        <td>@employment.degree</td>
+                        <td>@employment.city</td>
+                        <td>@employment.title</td>
+                        <td>@employment.startDate.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

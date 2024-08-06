@@ -1,0 +1,111 @@
+﻿@model ISchoolAppWebAppIvan.Models.PeopleModel;
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+
+<div id="hideMe" style="display:none">
+    <h1 class="peopleTitle">@Model.title</h1>
+    <div>@Model.subTitle</div>
+    <div id="pepTabs">
+        <ul>
+            <li><a href="#fac">Our Faculty</a></li>@*Creates tabs for faculty and staff*@
+            <li><a href="#staff">Our Staff</a></li>
+        </ul>
+        <div id="fac">
+            @foreach (var faculty in @Model.faculty)//display all faculty in faculty tab
+            {
+                <div class="person">
+                    <button class="button">@faculty.name</button>@*displays only the button first*@
+                    <div class="modal" title="@faculty.name">@*modal info only displays after button is clicked*@
+                    <img src="@faculty.imagePath" atl="pic" />
+                    <div style="font-size:medium">
+                        @faculty.username
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.name
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.tagline
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.title
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.interestArea
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.office
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.phone
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.email
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.twitter
+                    </div>
+                        <div style="font-size:medium">
+                        @faculty.facebook
+                    </div>
+                    @if (faculty.website != "")
+                    {
+                            <div style="font-size:medium">
+                            <a href="@faculty.website" target="_blank">My Site</a>
+                        </div>
+                    }
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="staff">
+            @foreach (var staff in @Model.staff) //display all staff in staff tab
+            {
+                <div class="person">
+                    <button class="button">@staff.name</button> @*displays only the button first*@
+                    <div class="modal" title="@staff.name"> @*modal info only displays after button is clicked*@
+                    <img src="@staff.imagePath" atl="pic" />
+                        <div style="font-size:medium">
+                        @staff.username
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.name
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.tagline
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.title
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.interestArea
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.office
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.phone
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.email
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.twitter
+                    </div>
+                        <div style="font-size:medium">
+                        @staff.facebook
+                    </div>
+                    @if (staff.website != "")
+                    {
+                            <div style="font-size:medium">
+                            <a href="@staff.website" target="_blank">My Site</a>
+                        </div>
+                    }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

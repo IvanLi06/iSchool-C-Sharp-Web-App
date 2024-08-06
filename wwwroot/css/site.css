@@ -1,0 +1,143 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+.about{
+    padding: 2.5%;
+    margin: 4.5%;
+    border: solid 2px blue;
+    text-align: center;
+}
+
+.aboutTitle {
+    text-align: center;
+}
+
+
+
+/*Degrees css*/
+.degrees{
+    text-align: center;
+}
+
+.degreeAccordions {
+    padding: 2.5%;
+    margin: 4.5%;
+    background-color: lightblue;
+}
+
+.graduateDegree{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.undergraduateDegree{
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+
+/*Minors css*/
+.minors{
+    text-align:center;
+}
+
+.minorName{
+    text-align:center;
+}
+
+.note {
+    margin-top: 25px;
+}
+
+.minorAccordions {
+    padding: 2.5%;
+    margin: 4.5%;
+    background-color: lightblue;
+    text-align: center;
+}
+
+
+
+
+
+/*Employment CSS*/
+.employmentTitle{
+    text-align: center;
+}
+
+.employmentInformation {
+    text-align: center;
+    margin-top: 25px;
+    background-color: rgb(223, 241, 245);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.tables {
+    margin-bottom: 50px;
+    padding: 2.5%;
+    border: solid 2px gray;
+}
+
+.ecTitles {
+    padding: 2.5%;
+    margin: 4.5%;
+    border: solid 5px cornflowerblue;
+    text-align: center;
+}
+
+.careerTitle{
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+/*People css*/
+
+.peopleTitle{
+    text-align:center;
+}
+
+.person {
+    width: calc(20%); 
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px; 
+}
+
+    .button {
+        border: none;
+        border-radius: 20px;
+        background-color: lightblue;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: cornflowerblue;
+    }

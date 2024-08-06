@@ -1,0 +1,73 @@
+﻿@model ISchoolAppWebAppIvan.Models.DegreeModel;
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+<div id="hideMe" style="display:none">
+    <h1 class="degrees">Available Degrees</h1>
+    <div class="degreeAccordions">
+        <h3 class="undergraduateDegree">Undergraduate Degrees</h3>
+        <div>
+            @foreach (var undergraduate in @Model.undergraduate)//iterate through each undergraduate degree
+            {
+                <div class="underAcc"> @*Display info in accordion*@
+                    <h1 style="font-size:large">
+                        @undergraduate.title
+                        (@undergraduate.degreeName)
+                    </h1>
+                    <div style="font-size:medium">
+                        @undergraduate.description
+                        <hr>
+                        Concentrations:
+                        <ul>
+                            @foreach (var concentration in undergraduate.concentrations)
+                            {
+                                <li>@concentration</li> //iterate through each concentration and display
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <h3 class="graduateDegree">Graduate Degrees</h3>
+        <div>
+            @foreach (var graduate in Model.graduate)//iterate through each graduate degree and only show ones with titles
+            {
+                if (!string.IsNullOrEmpty(graduate.title)) 
+                {
+                    <div class="graduateAcc"> @*Display info in accordion*@
+                        <h1 style="font-size: large">
+                            @graduate.title
+                            (@graduate.degreeName)
+                        </h1>
+                        <div style="font-size: medium">
+                            @graduate.description
+                            <hr>
+                            Concentrations:
+                            <ul>
+                                @foreach (var concentration in graduate.concentrations)
+                                {
+                                    <li>@concentration</li> //iterate through each concentration and display
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="certAcc">
+            <h1 style="font-size: large"> Available Certificates</h1>
+            <ul>
+                @foreach (var certificate in Model.graduate) @*Display certificate info in accordion since it wasnt displayed before*@
+                {
+                    @foreach (var cert in certificate.availableCertificates)
+                    {
+                        <li>@cert</li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
