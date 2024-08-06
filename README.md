@@ -16,3 +16,5 @@ Can sort by Employer, degree, city, term, start date.
 User can search for specific entry.
 
 Imports for these three plugins are shows with comments in the _Layout.cshtml file
+
+Youtube video showing app functionality: https://youtu.be/9b8_YxybMSk
